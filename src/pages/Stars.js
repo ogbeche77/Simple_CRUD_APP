@@ -1,14 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import {
-  Card,
-  Image,
-  Grid,
-  Transition,
-  Label,
-  Button,
-  Icon,
-} from "semantic-ui-react";
+import { Card, Image } from "semantic-ui-react";
 
 const Stars = () => {
   const [stars, setStars] = useState(null);
@@ -20,6 +12,9 @@ const Stars = () => {
       })
       .then((data) => {
         setStars(data);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   }, []);
 
@@ -27,7 +22,7 @@ const Stars = () => {
     <Card fluid>
       <Card.Content>
         <Image
-          floated="center"
+          floated="left"
           size="small"
           src="https://images-na.ssl-images-amazon.com/images/S/pv-target-images/7bbe5762c79ee0ad11c1267483b4a2d5e12868de779eaf751e8e86596e978bbb._V_SX1080_.jpg"
         />
@@ -36,9 +31,9 @@ const Stars = () => {
         <Card.Meta as={Link} to={"/"}></Card.Meta>
         <Card.Description>
           {stars &&
-            stars.map((stars) => {
+            stars.map((stars, index) => {
               return (
-                <div>
+                <div key={index}>
                   <h1 key={stars.id}>{stars.name} </h1>
                   <p></p>
                 </div>
