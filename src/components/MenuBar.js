@@ -12,14 +12,21 @@ function MenuBar() {
   return (
     <Menu pointing secondary size="large" color="blue">
       <Menu.Item
-        name="universe"
-        active={activeItem === "universe"}
+        name="home"
+        active={activeItem === "home"}
         onClick={handleItemClick}
         as={Link}
         to="/"
       />
 
       <Menu.Menu position="right">
+        <Menu.Item
+          name="universe"
+          active={activeItem === "universe"}
+          onClick={handleItemClick}
+          as={Link}
+          to="/universe"
+        />
         <Menu.Item
           name="stars"
           active={activeItem === "stars"}
@@ -28,6 +35,7 @@ function MenuBar() {
           to="/stars"
         />
         <Menu.Item
+          position="right"
           name="imprint"
           active={activeItem === "imprint"}
           onClick={handleItemClick}
