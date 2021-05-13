@@ -12,7 +12,7 @@ import logo from "./utils/logo.png";
 function App() {
   return (
     <>
-      <img className={styles.logo} src={logo} alt="corona" />
+      <img className={styles.logo} src={logo} alt="universe" />
       <Router>
         <Container>
           <MenuBar />

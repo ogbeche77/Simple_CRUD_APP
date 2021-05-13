@@ -1,0 +1,59 @@
+{
+  "stars": [
+    {
+      "id": 1,
+      "name": "Solar-type Stars"
+    },
+    {
+      "id": 2,
+      "name": "Hot Blue Stars"
+    },
+    {
+      "id": 3,
+      "name": "Red Dwarf Stars"
+    },
+    {
+      "id": 4,
+      "name": "Red Giant Stars"
+    },
+    {
+        "id": 5,
+        "name": "White Dwarfs"
+      }
+    ],
+    "universes": [
+      {
+        "id": 1,
+        "maxSize": 3000,
+        "currentSize": 2500,
+        "name": "Earth"
+      },
+      {
+        "id": 2,
+        "maxSize": 4000,
+        "currentSize": 3122,
+        "name": "Moon"
+      },
+      {
+        "id": 3,
+        "maxSize": 2670,
+        "currentSize": 1399,
+        "name": "Sun"
+      },
+      {
+        "id": 4,
+        "maxSize": 4322,
+        "currentSize": 3872,
+        "name": "Star"
+      },
+      {
+          "id": 5,
+          "maxSize": 40000,
+          "currentSize": 38112,
+          "name": "Milky Way"
+        }
+    ]
+  
+
+}
+  

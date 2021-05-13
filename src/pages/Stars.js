@@ -1,7 +1,54 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import {
+  Card,
+  Image,
+  Grid,
+  Transition,
+  Label,
+  Button,
+  Icon,
+} from "semantic-ui-react";
 
-function Stars() {
-  return <div>Stars</div>;
-}
+const Stars = () => {
+  const [stars, setStars] = useState(null);
+
+  useEffect(() => {
+    fetch("http://localhost:8080/stars")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setStars(data);
+      });
+  }, []);
+
+  return (
+    <Card fluid>
+      <Card.Content>
+        <Image
+          floated="center"
+          size="small"
+          src="https://images-na.ssl-images-amazon.com/images/S/pv-target-images/7bbe5762c79ee0ad11c1267483b4a2d5e12868de779eaf751e8e86596e978bbb._V_SX1080_.jpg"
+        />
+
+        <Card.Header></Card.Header>
+        <Card.Meta as={Link} to={"/"}></Card.Meta>
+        <Card.Description>
+          {stars &&
+            stars.map((stars) => {
+              return (
+                <div>
+                  <h1 key={stars.id}>{stars.name} </h1>
+                  <p></p>
+                </div>
+              );
+            })}
+        </Card.Description>
+      </Card.Content>
+      <Card.Content extra></Card.Content>
+    </Card>
+  );
+};
 
 export default Stars;
