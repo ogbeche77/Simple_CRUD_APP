@@ -1,7 +1,7 @@
 import React from "react";
 
-function Imprint() {
+const Imprint = () => {
   return <div>&copy; {new Date().getFullYear()} Copyright</div>;
-}
+};
 
 export default Imprint;
