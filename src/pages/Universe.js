@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { Card, Image, Button, Label } from "semantic-ui-react";
+import {
+  cyInputUniverseName,
+  cyInputMaximumSize,
+  cyInputCurrentSize,
+  cyAddNewUniverseButton,
+} from "../handles/index.js";
 
 const Universe = () => {
   const { id } = useParams;
@@ -89,6 +95,7 @@ const Universe = () => {
               required={true}
               value={newUniverse}
               onChange={(e) => setNewUniverse(e.target.value)}
+              data-cy={cyInputUniverseName}
             />
             <input
               placeholder="Add Maximum Size"
@@ -96,6 +103,7 @@ const Universe = () => {
               required={true}
               value={maximumSize}
               onChange={(e) => setMaximumSize(e.target.value)}
+              data-cy={cyInputMaximumSize}
             />
             <input
               placeholder="Add Current Size"
@@ -103,9 +111,10 @@ const Universe = () => {
               required={true}
               value={currentSize}
               onChange={(e) => setCurrentSize(e.target.value)}
+              data-cy={cyInputCurrentSize}
             />
           </div>
-          <Button type="submit" color="brown">
+          <Button type="submit" color="brown" data-cy={cyAddNewUniverseButton}>
             {" "}
             Submit
           </Button>

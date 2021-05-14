@@ -81,7 +81,12 @@
       "maximumSize": "676433",
       "currentSize": "333322",
       "id": 10
+    },
+    {
+      "newUniverse": "Jupiter",
+      "maximumSize": "24689",
+      "currentSize": "14689",
+      "id": 11
     }
-   
   ]
 }
