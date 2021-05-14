@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Menu } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
-function MenuBar() {
+const MenuBar = () => {
   const pathname = window.location.pathname;
   const path = pathname === "/" ? "" : pathname.substr(1);
   const [activeItem, setActiveItem] = useState(path);
@@ -45,6 +45,6 @@ function MenuBar() {
       </Menu.Menu>
     </Menu>
   );
-}
+};
 
 export default MenuBar;
