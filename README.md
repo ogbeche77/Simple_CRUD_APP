@@ -19,6 +19,7 @@ As-Ideas-Challenge Frontend Challenge was built using ReactJS, Semantic-UI-React
    `npm install`,
    `npx json-server --watch data/data.json --port 8080` to start the json server
    `npm start` to start the react app
+   `sass --watch App.scss:App.css`
 3. Test:
    `npm run cypress:open`
 
