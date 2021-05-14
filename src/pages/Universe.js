@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Card, Image } from "semantic-ui-react";
+import { useHistory, useParams } from "react-router-dom";
+import { Card, Image, Button, Label } from "semantic-ui-react";
 
 const Universe = () => {
+  const { id } = useParams;
   const [universe, setUniverse] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [newUniverse, setNewUniverse] = useState("");
+  const [maximumSize, setMaximumSize] = useState("");
+  const [currentSize, setCurrentSize] = useState("");
+  const history = useHistory();
 
   useEffect(() => {
     fetch("http://localhost:8080/universes")
@@ -12,38 +18,99 @@ const Universe = () => {
       })
       .then((data) => {
         setUniverse(data);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [id]);
+  const handleSumit = (e) => {
+    e.preventDefault();
+    const createNewUniverse = { newUniverse, maximumSize, currentSize };
+
+    fetch("http://localhost:8080/universes", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(createNewUniverse),
+    }).then(() => {
+      history.go(0);
+    });
+  };
+
+  const handleDelete = () => {
+    fetch("http://localhost:8080/universes/" + id, {
+      method: "DELETE",
+    }).then(() => {
+      history.go(0);
+    });
+  };
 
   return (
     <Card fluid>
       <Card.Content>
         <Image
-          floated="left"
-          size="small"
-          src="https://occ-0-1723-92.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABSRNF98hjeJ9wfBOZ-iIcnIwdD8ugFNhqTk9E6At7rc9LW_iJKC9D2G40VnZTlJSUlbfwiki0fyTGu6HG-1gaRtfUZ0z.jpg?r=593"
+          floated="right"
+          size="mini"
+          src="https://react.semantic-ui.com/images/avatar/large/molly.png"
         />
-        <Card.Header></Card.Header>
-        <Card.Meta as={Link} to={"/"}></Card.Meta>
+
         <Card.Description>
+          {loading && <h1>Loading</h1>}
           {universe &&
             universe.map((universes, index) => {
               return (
                 <div key={index}>
-                  <h1> {universes.name} </h1>
+                  <h1> {universes.newUniverse} </h1>
                   <div className="universe-body">
-                    <p>Maximum Size: {universes.maxSize}</p>
-                    <p>Current Size: {universes.currentSize}</p>
+                    <Label basic color="grey" pointing="left">
+                      Maximum Size: {universes.maximumSize}
+                    </Label>
+
+                    <Label basic color="grey" pointing="left">
+                      Current Size: {universes.currentSize}
+                    </Label>
+                    <Button onClick={handleDelete} type="submit" color="brown">
+                      {" "}
+                      Delete
+                    </Button>
                   </div>
                 </div>
               );
             })}
         </Card.Description>
       </Card.Content>
-      <Card.Content extra></Card.Content>
+      <Card.Content extra>
+        <form className="form-container" onSubmit={handleSumit}>
+          <h3 className="form-title">Add a universe</h3>
+          <div className="form-content">
+            <input
+              placeholder="Add a universe"
+              type="text"
+              required={true}
+              value={newUniverse}
+              onChange={(e) => setNewUniverse(e.target.value)}
+            />
+            <input
+              placeholder="Add Maximum Size"
+              type="number"
+              required={true}
+              value={maximumSize}
+              onChange={(e) => setMaximumSize(e.target.value)}
+            />
+            <input
+              placeholder="Add Current Size"
+              type="number"
+              required={true}
+              value={currentSize}
+              onChange={(e) => setCurrentSize(e.target.value)}
+            />
+          </div>
+          <Button type="submit" color="brown">
+            {" "}
+            Submit
+          </Button>
+        </form>
+      </Card.Content>
     </Card>
   );
 };
