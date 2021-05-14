@@ -17,43 +17,71 @@
       "name": "Red Giant Stars"
     },
     {
-        "id": 5,
-        "name": "White Dwarfs"
-      }
-    ],
-    "universes": [
-      {
-        "id": 1,
-        "maxSize": 3000,
-        "currentSize": 2500,
-        "name": "Earth"
-      },
-      {
-        "id": 2,
-        "maxSize": 4000,
-        "currentSize": 3122,
-        "name": "Moon"
-      },
-      {
-        "id": 3,
-        "maxSize": 2670,
-        "currentSize": 1399,
-        "name": "Sun"
-      },
-      {
-        "id": 4,
-        "maxSize": 4322,
-        "currentSize": 3872,
-        "name": "Star"
-      },
-      {
-          "id": 5,
-          "maxSize": 40000,
-          "currentSize": 38112,
-          "name": "Milky Way"
-        }
-    ]
-  
-
+      "id": 5,
+      "name": "White Dwarfs"
+    }
+  ],
+  "universes": [
+    {
+      "maximumSize": 3000,
+      "currentSize": 2500,
+      "newUniverse": "Earth",
+      "id": 1
+    },
+    {
+      "maximumSize": 4000,
+      "currentSize": 3122,
+      "newUniverse": "Moon",
+      "id": 2
+    },
+    {
+      "maximumSize": 2670,
+      "currentSize": 1399,
+      "newUniverse": "Sun",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "maximumSize": 4322,
+      "currentSize": 3872,
+      "newUniverse": "Star"
+    },
+    {
+      "maximumSize": 40000,
+      "currentSize": 38112,
+      "newUniverse": "Milky Way",
+      "id": 5
+    },
+    {
+      "newUniverse": "Planet",
+      "maximumSize": "12345",
+      "currentSize": "12345",
+      "id": 6
+    },
+    {
+      "newUniverse": "Mars",
+      "maximumSize": "23456",
+      "currentSize": "23456",
+      "id": 7
+    },
+    {
+      "newUniverse": "Pluto",
+      "maximumSize": "1212",
+      "currentSize": "1212",
+      "id": 8
+    },
+    {
+      "newUniverse": "Janas",
+      "maximumSize": "355645",
+      "currentSize": "64373",
+      "id": 9
+    },
+    {
+      "newUniverse": "Eartly Mother",
+      "maximumSize": "676433",
+      "currentSize": "333322",
+      "id": 10
+    }
+   
+  ]
 }
-  

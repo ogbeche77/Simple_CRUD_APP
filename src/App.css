@@ -7,3 +7,17 @@
 .universe-body{
   margin-bottom: 20px;
 }
+.form-container{
+  margin-top: 10px;
+}
+input{
+  font-size: 16px;
+  box-sizing: border-box;
+  padding: 16px;
+  margin: 0px 16px 10px 2px;
+  border: 1px solid brown;
+  border-radius: 10px;
+}
+.form-title{
+  font-size: 20px;
+}
