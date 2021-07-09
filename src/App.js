@@ -12,6 +12,7 @@ import logo from "./utils/logo.png";
 import NotFound from "./pages/NotFound";
 
 const App = () => {
+  const sampleTest = "I am a sampleTester";
   return (
     <>
       <img className="logo" src={logo} alt="universe" />
@@ -22,7 +23,11 @@ const App = () => {
             <Route exact path="/" component={Home} />
             <Route exact path="/universe" component={Universe} />
             <Route exact path="/stars" component={Stars} />
-            <Route exact path="/imprint" component={Imprint} />
+            <Route
+              exact
+              path="/imprint"
+              render={() => <Imprint sampleTest={sampleTest} />}
+            />
             <Route component={NotFound} />
           </Switch>
         </Container>

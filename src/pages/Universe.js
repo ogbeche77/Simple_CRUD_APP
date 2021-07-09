@@ -52,75 +52,85 @@ const Universe = () => {
   };
 
   return (
-    <Card fluid>
-      <Card.Content>
-        <Image
-          floated="right"
-          size="mini"
-          src="https://react.semantic-ui.com/images/avatar/large/molly.png"
-        />
+    <div data-testid="universe">
+      <Card fluid>
+        <Card.Content>
+          <Image
+            floated="right"
+            size="mini"
+            src="https://react.semantic-ui.com/images/avatar/large/molly.png"
+          />
 
-        <Card.Description>
-          {loading && <h1>Loading</h1>}
-          {universe &&
-            universe.map((universes, index) => {
-              return (
-                <div key={index}>
-                  <h1> {universes.newUniverse} </h1>
-                  <div className="universe-body">
-                    <Label basic color="grey" pointing="left">
-                      Maximum Size: {universes.maximumSize}
-                    </Label>
+          <Card.Description>
+            {loading && <h1>Loading</h1>}
+            {universe &&
+              universe.map((universes, index) => {
+                return (
+                  <div key={index}>
+                    <h1> {universes.newUniverse} </h1>
+                    <div className="universe-body">
+                      <Label basic color="grey" pointing="left">
+                        Maximum Size: {universes.maximumSize}
+                      </Label>
 
-                    <Label basic color="grey" pointing="left">
-                      Current Size: {universes.currentSize}
-                    </Label>
-                    <Button onClick={handleDelete} type="submit" color="brown">
-                      {" "}
-                      Delete
-                    </Button>
+                      <Label basic color="grey" pointing="left">
+                        Current Size: {universes.currentSize}
+                      </Label>
+                      <Button
+                        onClick={handleDelete}
+                        type="submit"
+                        color="brown"
+                      >
+                        {" "}
+                        Delete
+                      </Button>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
-        </Card.Description>
-      </Card.Content>
-      <Card.Content extra>
-        <form className="form-container" onSubmit={handleSumit}>
-          <h3 className="form-title">Add a universe</h3>
-          <div className="form-content">
-            <input
-              placeholder="Add a universe"
-              type="text"
-              required={true}
-              value={newUniverse}
-              onChange={(e) => setNewUniverse(e.target.value)}
-              data-cy={cyInputUniverseName}
-            />
-            <input
-              placeholder="Add Maximum Size"
-              type="number"
-              required={true}
-              value={maximumSize}
-              onChange={(e) => setMaximumSize(e.target.value)}
-              data-cy={cyInputMaximumSize}
-            />
-            <input
-              placeholder="Add Current Size"
-              type="number"
-              required={true}
-              value={currentSize}
-              onChange={(e) => setCurrentSize(e.target.value)}
-              data-cy={cyInputCurrentSize}
-            />
-          </div>
-          <Button type="submit" color="brown" data-cy={cyAddNewUniverseButton}>
-            {" "}
-            Submit
-          </Button>
-        </form>
-      </Card.Content>
-    </Card>
+                );
+              })}
+          </Card.Description>
+        </Card.Content>
+        <Card.Content extra>
+          <form className="form-container" onSubmit={handleSumit}>
+            <h3 className="form-title">Add a universe</h3>
+            <div className="form-content">
+              <input
+                placeholder="Add a universe"
+                type="text"
+                required={true}
+                value={newUniverse}
+                onChange={(e) => setNewUniverse(e.target.value)}
+                data-cy={cyInputUniverseName}
+              />
+              <input
+                placeholder="Add Maximum Size"
+                type="number"
+                required={true}
+                value={maximumSize}
+                onChange={(e) => setMaximumSize(e.target.value)}
+                data-cy={cyInputMaximumSize}
+              />
+              <input
+                placeholder="Add Current Size"
+                type="number"
+                required={true}
+                value={currentSize}
+                onChange={(e) => setCurrentSize(e.target.value)}
+                data-cy={cyInputCurrentSize}
+              />
+            </div>
+            <Button
+              type="submit"
+              color="brown"
+              data-cy={cyAddNewUniverseButton}
+            >
+              {" "}
+              Submit
+            </Button>
+          </form>
+        </Card.Content>
+      </Card>
+    </div>
   );
 };
 

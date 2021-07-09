@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches imprint component snapshot 1`] = `
+Array [
+  " ",
+  <div>
+    © 
+    2021
+     Copyright
+  </div>,
+  <div
+    data-testid="sample-item"
+  >
+    I am a sampleTester
+  </div>,
+]
+`;
