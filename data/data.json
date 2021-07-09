@@ -111,6 +111,12 @@
       "maximumSize": "34",
       "currentSize": "45",
       "id": 15
+    },
+    {
+      "newUniverse": "sonne",
+      "maximumSize": "54",
+      "currentSize": "43",
+      "id": 16
     }
   ]
 }

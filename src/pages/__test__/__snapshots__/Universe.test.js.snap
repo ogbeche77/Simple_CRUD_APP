@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches universe component snapshot 1`] = `
+<div
+  data-testid="universe"
+>
+  <div
+    className="ui fluid card"
+    onClick={[Function]}
+  >
+    <div
+      className="content"
+    >
+      <img
+        className="ui mini right floated image"
+        src="https://react.semantic-ui.com/images/avatar/large/molly.png"
+      />
+      <div
+        className="description"
+      >
+        <h1>
+          Loading
+        </h1>
+      </div>
+    </div>
+    <div
+      className="extra content"
+    >
+      <form
+        className="form-container"
+        onSubmit={[Function]}
+      >
+        <h3
+          className="form-title"
+        >
+          Add a universe
+        </h3>
+        <div
+          className="form-content"
+        >
+          <input
+            data-cy="InputUniverseName"
+            onChange={[Function]}
+            placeholder="Add a universe"
+            required={true}
+            type="text"
+            value=""
+          />
+          <input
+            data-cy="InputMaximumSize"
+            onChange={[Function]}
+            placeholder="Add Maximum Size"
+            required={true}
+            type="number"
+            value=""
+          />
+          <input
+            data-cy="InputCurrentSize"
+            onChange={[Function]}
+            placeholder="Add Current Size"
+            required={true}
+            type="number"
+            value=""
+          />
+        </div>
+        <button
+          className="ui brown button"
+          data-cy="AddNewUniverseButton"
+          onClick={[Function]}
+          type="submit"
+        >
+           
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+`;
