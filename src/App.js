@@ -12,7 +12,7 @@ import logo from "./utils/logo.png";
 import NotFound from "./pages/NotFound";
 
 const App = () => {
-  const sampleTest = "I am a sampleTester";
+  const sampleTest = "I am just a sampleTester";
   return (
     <>
       <img className="logo" src={logo} alt="universe" />
