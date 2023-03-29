@@ -70,11 +70,11 @@ const Universe = () => {
                     <h1> {universes.newUniverse} </h1>
                     <div className="universe-body">
                       <Label basic color="grey" pointing="left">
-                        Maximum Size: {universes.maximumSize}
+                        Maximum Size : {universes.maximumSize}
                       </Label>
 
                       <Label basic color="grey" pointing="left">
-                        Current Size: {universes.currentSize}
+                        Current Size : {universes.currentSize}
                       </Label>
                       <Button
                         onClick={handleDelete}
